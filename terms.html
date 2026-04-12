@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warunki Użytkowania - KOMPOBRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="index.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Powrót
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-12 text-kompobrat-green-600">Warunki Użytkowania</h1>
+
+            <div class="space-y-8 text-gray-700 dark:text-gray-300">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">1. Definicje</h2>
+                    <p class="leading-relaxed">
+                        "Strona" oznacza serwis internetowy KOMPOBRAT. "Towar" oznacza produkty sprzedawane przez KOMPOBRAT. "Klient" to Ty - osoba dokonująca zakupu na naszej stronie.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">2. Akceptacja Warunków</h2>
+                    <p class="leading-relaxed">
+                        Dokonując zakupu na naszej Stronie, akceptujesz niniejsze Warunki Użytkowania. Jeśli się z nimi nie zgadzasz, nie możesz korzystać z naszych usług.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">3. Produkty i Usługi</h2>
+                    <p class="leading-relaxed mb-4">
+                        KOMPOBRAT zobowiązuje się dostarczać towary wysokiej jakości. Zastrzegamy sobie prawo do:
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Zmian cen produktów (obowiązuje cena w momencie złożenia zamówienia)</li>
+                        <li>Aktualizacji opisów produktów</li>
+                        <li>Wstrzymania sprzedaży produktów bez uzasadnienia</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">4. Zamówienia i Płatności</h2>
+                    <p class="leading-relaxed mb-4">
+                        Każde zamówienie podlega zatwierdzeniu przez KOMPOBRAT. Zastrzegamy sobie prawo do odrzucenia zamówienia bez podania przyczyny. Akceptujemy następujące metody płatności:
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Karty kredytowe i debetowe</li>
+                        <li>Przelewy bankowe</li>
+                        <li>Portfele elektroniczne (Apple Pay, Google Pay)</li>
+                        <li>Płatność przy odbiorze</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">5. Dostarczanie</h2>
+                    <p class="leading-relaxed">
+                        My nie ponosimy odpowiedzialności za opóźnienia w dostarczeniu spowodowane czynnikami niezależnymi (pogoda, sytuacja na drogach, siła wyższa). Czas dostarczenia podany na Stronie jest orientacyjny.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">6. Zwroty i Reklamacje</h2>
+                    <p class="leading-relaxed">
+                        Prawo do zwrotu towaru przysługuje w ciągu 14 dni od dostarczenia. Towar musi być w stanie nowym, z oryginalnym opakowaniem. Zwrot jest darmowy dla Klienta.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">7. Ograniczenie Odpowiedzialności</h2>
+                    <p class="leading-relaxed">
+                        KOMPOBRAT nie ponosi odpowiedzialności za pośrednie, przypadkowe lub konsekwencyjne szkody wynikające z korzystania z Strony lub Towarów. Nasza całkowita odpowiedzialność jest ograniczona do ceny zapłaconej za Towar.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">8. Zmiany Warunków</h2>
+                    <p class="leading-relaxed">
+                        Zastrzegamy sobie prawo do zmiany niniejszych Warunków w dowolnym momencie. Zmiany obowiązują od dnia opublikowania na Stronie.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">9. Prawo Właściwe</h2>
+                    <p class="leading-relaxed">
+                        Niniejsze Warunki podlegają prawu polskiemu. Wszelkie spory będą rozstrzygane przez sądy właściwe dla siedziby KOMPOBRAT.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">10. Kontakt</h2>
+                    <p class="leading-relaxed">
+                        W przypadku pytań dotyczących tych Warunków, skontaktuj się z nami: hello@kompobrat.pl
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

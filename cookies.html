@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Cookies - KOMPOBRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="index.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Powrót
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-12 text-kompobrat-green-600">Polityka Cookies</h1>
+
+            <div class="space-y-8 text-gray-700 dark:text-gray-300">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">1. Czym są Cookies?</h2>
+                    <p class="leading-relaxed">
+                        Cookies to małe pliki tekstowe przechowywane na Twoim urządzeniu, które pozwalają nam rozpoznać Cię podczas odwiedzin na naszej Stronie. Używamy ich do poprawy doświadczenia użytkownika.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">2. Rodzaje Cookies, Które Używamy</h2>
+                    <p class="leading-relaxed mb-4">Używamy następujących typów cookies:</p>
+                    <ul class="space-y-4 ml-4">
+                        <li>
+                            <strong>Cookies Niezbędne (Obowiązkowe):</strong> Wymagane do prawidłowego funkcjonowania Strony, takie jak certyfikacja zabezpieczeń czy ustawienia języka.
+                        </li>
+                        <li>
+                            <strong>Cookies Analityczne:</strong> Pomagają nam zrozumieć, jak użytkownicy poruszają się po Stronie. Korzystamy z Google Analytics.
+                        </li>
+                        <li>
+                            <strong>Cookies Marketingowe:</strong> Pozwalają nam wyświetlać relevant ads na innych stronach. Wymagają Twojej zgody.
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">3. Dostawcy Cookies Trzecich Stron</h2>
+                    <p class="leading-relaxed mb-4">Nasze Strony mogą zawierać treści od:</p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Google Analytics - analiza ruchu na stronie</li>
+                        <li>Facebook Pixel - śledzenie konwersji z reklam</li>
+                        <li>Providers dostarczających płatności online</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">4. Jak Możesz Kontrolować Cookies</h2>
+                    <p class="leading-relaxed mb-4">
+                        Większość przeglądarek internetowych pozwala ci kontrolować cookies. Możesz:
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Zaakceptować wszystkie cookies automatycznie</li>
+                        <li>Być pytanym o każdy cookie indywidualnie</li>
+                        <li>Odrzucić wszystkie cookies (może wpłynąć na funkcjonalność Strony)</li>
+                        <li>Usunąć cookies z przeszłości</li>
+                    </ul>
+                    <p class="mt-4">
+                        Instrukcje można znaleźć w ustawieniach przeglądarki (Chrome, Firefox, Safari, Edge).
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">5. Śledzenie między urządzeniami</h2>
+                    <p class="leading-relaxed">
+                        Jeśli zalogowujesz się na naszej Stronie, możemy połączyć Twoją aktywność między różnymi urządzeniami w celu lepszego personalizowania treści.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">6. Twoje Prawa</h2>
+                    <p class="leading-relaxed mb-4">
+                        Masz prawo do:
+                    </p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Wycofania zgody na cookies w dowolnym momencie</li>
+                        <li>Usunięcia cookies ze swojego urządzenia</li>
+                        <li>Informacji o konkretnych cookiesach używanych na Stronie</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">7. Jak Skontaktować Się z Nami</h2>
+                    <p class="leading-relaxed">
+                        Jeśli masz pytania dotyczące tej Polityki Cookies, napisz do nas: hello@kompobrat.pl
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">8. Aktualizacje Polityki</h2>
+                    <p class="leading-relaxed">
+                        Niniejsza Polityka Cookies może być zmieniana w dowolnym momencie. Ostatnia aktualizacja: 12 kwietnia 2026.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

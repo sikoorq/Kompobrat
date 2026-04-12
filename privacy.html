@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności - KOMPOBRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="index.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Powrót
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl font-bold mb-12 text-kompobrat-green-600">Polityka Prywatności</h1>
+
+            <div class="space-y-8 text-gray-700 dark:text-gray-300">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">1. Wstęp</h2>
+                    <p class="leading-relaxed">
+                        KOMPOBRAT (dalej "My" lub "Spółka") poważnie traktuje prywatność Twoich danych osobowych. Niniejsza Polityka Prywatności wyjaśnia, jakie informacje zbieramy, jak je wykorzystujemy oraz jakie masz prawa.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">2. Jakie dane zbieramy</h2>
+                    <p class="leading-relaxed mb-4">Zbieramy następujące rodzaje danych:</p>
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>Dane identyfikacyjne:</strong> imię, nazwisko, adres e-mail, numer telefonu</li>
+                        <li><strong>Dane adresowe:</strong> adres zamieszkania, kod pocztowy, miasto</li>
+                        <li><strong>Dane transakcyjne:</strong> historia zakupów, metoda płatności (bez szczegółów karty)</li>
+                        <li><strong>Dane techniczne:</strong> adres IP, typ przeglądarki, czas wizyty</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">3. Jak wykorzystujemy Twoje dane</h2>
+                    <p class="leading-relaxed">Twoje dane wykorzystujemy do:</p>
+                    <ul class="list-disc ml-6 space-y-2 mt-4">
+                        <li>Przetwarzania zamówień i dostarczania produktów</li>
+                        <li>Komunikacji w sprawie Twoich zakupów</li>
+                        <li>Wysyłania informacji o promocjach (tylko za Twoją zgodą)</li>
+                        <li>Ulepszania naszych usług</li>
+                        <li>Zapewnienia bezpieczeństwa i ochrony przed oszustwem</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">4. Udostępnianie danych trzecim stronom</h2>
+                    <p class="leading-relaxed">
+                        Nie sprzedajemy Twoich danych osobowych. Udostępniamy je wyłącznie partnerom logistycznym i dostawcom usług płatniczych, którzy pomagają nam realizować zamówienia. Wszyscy partnerzy są zobowiązani do zachowania poufności danych.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">5. Twoje prawa</h2>
+                    <p class="leading-relaxed">Masz prawo do:</p>
+                    <ul class="list-disc ml-6 space-y-2 mt-4">
+                        <li>Dostępu do swoich danych osobowych</li>
+                        <li>Sprostowania nieścisłych danych</li>
+                        <li>Usunięcia danych (prawo do bycia zapomnianym)</li>
+                        <li>Ograniczenia przetwarzania danych</li>
+                        <li>Wycofania zgody na przetwarzanie danych</li>
+                    </ul>
+                    <p class="mt-4">Aby skorzystać z tych praw, skontaktuj się z nami: hello@kompobrat.pl</p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">6. Bezpieczeństwo danych</h2>
+                    <p class="leading-relaxed">
+                        Używamy zaawansowanych technologii szyfrowania (SSL/TLS) do ochrony Twoich danych. Wszystkie transakcje odbywają się na bezpiecznych serwerach.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">7. Zmiany w Polityce Prywatności</h2>
+                    <p class="leading-relaxed">
+                        Zastrzegamy sobie prawo do aktualizacji tej Polityki. Zmiany będą opublikowane na tej stronie z datą ostatniej aktualizacji.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">8. Kontakt</h2>
+                    <p class="leading-relaxed">
+                        Jeśli masz pytania dotyczące tej Polityki Prywatności, skontaktuj się z nami: hello@kompobrat.pl
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
