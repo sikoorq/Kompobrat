@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOMPOBRAT - Ekskluzyjna technologia kompostowania domowego</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        },
+                        'kompobrat-copper': '#b87333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-gradient-to-br from-kompobrat-green-600 to-kompobrat-green-700 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">K</span>
+                </div>
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="#zalety" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">O produkcie</a>
+                <a href="#jak-to-dziala" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Jak to działa</a>
+                <a href="#footer" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Kontakt</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Dowiedz się więcej
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+                    <span class="text-kompobrat-green-600">KOMPOBRAT:</span><br>
+                    <span class="text-gray-900 dark:text-white">Twoja kuchnia, Twoja natura, Twój styl</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Rewolucyjna technologia kompostowania domowego. Całkowicie <span class="font-semibold text-kompobrat-green-600">bezwonna</span>, elegancka, 
+                    niezauważalna dla oka. Zmienia odpady bioodpadów w żyzny nawóz w zaledwie 24 godziny.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">
+                        Zamów teraz - Edycja Limitowana
+                    </button>
+                    <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-8 py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition">
+                        Obejrzyj film
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="w-full h-96 bg-gradient-to-br from-kompobrat-green-100 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl flex items-center justify-center smooth-transition">
+                    <div class="text-center">
+                        <div class="text-7xl mb-4">🌱</div>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium">Miejsce na wizualizację produktu</p>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-kompobrat-copper opacity-20 rounded-full blur-2xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zalety Section -->
+    <section id="zalety" class="py-20 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Dlaczego KOMPOBRAT?</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Połączenie nowoczesnej technologii z eleganckim designem. Wszystko na rzecz Twojego komfortu i ochrony środowiska.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Bezwonność -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-4xl">✨</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Całkowita Bezwonność</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Rewolucyjna filtracja powietrza z aktywnym węglem i technologią ozonowania. Żaden zapach w Twojej kuchni.
+                    </p>
+                </div>
+
+                <!-- Card 2: Design -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-4xl">🎨</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Design Premium</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Minimalistyczne pudełko w kolorze antracytu z elementami miedzi. Dostępne w 3 rozmiarach do każdej kuchni.
+                    </p>
+                </div>
+
+                <!-- Card 3: Szybkość -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
+                        <span class="text-4xl">⚡</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Nawóz w 24h</h3>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Przyspieszony proces fermentacji dzięki proprietary microbiome. Gotowy do użytku nawóz każdego dnia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prezentacja Produktu -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <div class="w-full h-96 bg-gradient-to-tl from-kompobrat-green-100 to-white dark:from-gray-800 dark:to-gray-900 rounded-3xl flex items-center justify-center smooth-transition">
+                    <div class="text-center">
+                        <div class="text-7xl mb-4">📦</div>
+                        <p class="text-gray-600 dark:text-gray-400 font-medium">Wielki obraz produktu</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2 space-y-8">
+                <h2 class="text-4xl md:text-5xl font-bold">
+                    Technologia, która nie rzuca się w oczy, <span class="text-kompobrat-green-600">ale zmienia świat</span>
+                </h2>
+                
+                <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                    KOMPOBRAT to wynik 5 lat intensywnych badań naukowych. Wykorzystujemy proprietarny microbiome zawarty w specjalnych kapsuł bioaktywnych, które przyspieszają proces rozkładu organicznego.
+                </p>
+
+                <ul class="space-y-4">
+                    <li class="flex gap-4 items-start">
+                        <span class="text-kompobrat-green-600 font-bold text-xl">✓</span>
+                        <div>
+                            <h4 class="font-semibold mb-1">Inteligentny System Czujników</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Automatycznie reguluje wilgotność i temperaturę wewnątrz kompostownika</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="text-kompobrat-green-600 font-bold text-xl">✓</span>
+                        <div>
+                            <h4 class="font-semibold mb-1">Cicha Kompresja</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Zaledwie 25dB hałasu - cichsze niż lodówka</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4 items-start">
+                        <span class="text-kompobrat-green-600 font-bold text-xl">✓</span>
+                        <div>
+                            <h4 class="font-semibold mb-1">Zasilanie Hybrydowe</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm">Wykorzystuje energię słoneczną + baterię do 72 godzin autonomii</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 inline-block">
+                    Poznaj Specyfikacje
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jak to działa -->
+    <section id="jak-to-dziala" class="py-24 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Jak to działa?</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Prosty proces w trzech krokach. Nawet Twoje dziecko może tego używać bez problemu.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Krok 1 -->
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition h-full">
+                        <div class="absolute -top-6 -left-6 w-14 h-14 bg-kompobrat-green-600 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                            1
+                        </div>
+                        <div class="mt-8 space-y-4">
+                            <div class="w-20 h-20 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mx-auto">
+                                <span class="text-4xl">🍎</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-center">Wrzuć Bioodpady</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                                Wrzuć skórki, liście, resztki jedzenia do górnego pojemnika. Brak stosów — wszystko schowa się dyskretnie.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-12 transform -translate-y-1/2">
+                        <div class="text-4xl text-kompobrat-green-600">→</div>
+                    </div>
+                </div>
+
+                <!-- Krok 2 -->
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition h-full">
+                        <div class="absolute -top-6 -left-6 w-14 h-14 bg-kompobrat-green-600 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                            2
+                        </div>
+                        <div class="mt-8 space-y-4">
+                            <div class="w-20 h-20 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mx-auto">
+                                <span class="text-4xl">⚙️</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-center">Magiczne Przekształcenie</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                                Mikrobiology pracuje całą noc. System czujników monitoruje każdy proces w czasie rzeczywistym.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-12 transform -translate-y-1/2">
+                        <div class="text-4xl text-kompobrat-green-600">→</div>
+                    </div>
+                </div>
+
+                <!-- Krok 3 -->
+                <div class="relative">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition h-full">
+                        <div class="absolute -top-6 -left-6 w-14 h-14 bg-kompobrat-green-600 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                            3
+                        </div>
+                        <div class="mt-8 space-y-4">
+                            <div class="w-20 h-20 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mx-auto">
+                                <span class="text-4xl">🌿</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-center">Zbierz Czarny Złoto</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                                Nawóz gotowy za 24 godziny. Idealny do roślin domowych, ogórków czy kwiatów na balkonie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 rounded-3xl p-12 shadow-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Dołącz do Rewolucji Kompostowania
+            </h2>
+            <p class="text-xl text-green-50 mb-8 leading-relaxed">
+                Ponad 5000 zadowolonych klientów już zmienia swoje nawyki. Czy Ty będziesz następny?
+            </p>
+            <button class="bg-white text-kompobrat-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">
+                Zarezerwuj Swoją Jednostkę
+            </button>
+            <p class="text-green-100 mt-4 text-sm">Edycja limitowana: pozostało jedynie 47 jednostek</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-kompobrat-green-600 to-kompobrat-green-700 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">K</span>
+                        </div>
+                        <span class="font-bold text-white">KOMPOBRAT</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Rewolucjonizujemy kompostowanie domowe poprzez nowoczesną technologię i design.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Produkty</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Mini</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Standard</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Pro</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Kapsułki Bioaktywne</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Obsługa</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Gwarancja</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Dostarczanie</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Zwroty</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📧 hello@kompobrat.pl</li>
+                        <li>📞 +48 22 XXXX XXXX</li>
+                        <li>📍 ul. Ekologiczna 42,<br>Warszawa 02-000</li>
+                        <li class="pt-4 flex gap-4">
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">LinkedIn</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Instagram</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Polityka Prywatności</a>
+                    <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Warunki Użytkowania</a>
+                    <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Version Badge -->
+    <div class="fixed bottom-6 right-6 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-full text-xs font-semibold opacity-50 hover:opacity-75 smooth-transition cursor-default">
+        Build: 0.0.1 Alpha
+    </div>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        // Sprawdzenie preferencji z localStorage
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        // Event listener dla toggle
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+
+        // Smooth scroll dla linków
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
