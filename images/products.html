@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkty - KOMPOBRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        },
+                        'kompobrat-copper': '#b87333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </a>
+            
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html#zalety" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">O produkcie</a>
+                <a href="products.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition font-semibold text-kompobrat-green-600">Produkty</a>
+                <a href="index.html#jak-to-dziala" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Jak to działa</a>
+                <a href="index.html#faq" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">FAQ</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Zamów
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-16 pb-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl font-bold mb-4 text-kompobrat-green-600">Nasze Produkty</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300">
+                Odkryj pełną gamę KOMPOBRAT – od kompaktowych rozwiązań dla małych przestrzeni po profesjonalne systemy dla zapalonych entuzjastów.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Product 1: Mini -->
+                <a href="product-mini.html" class="block">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300">
+                    <img src="images/KOMPOBRATMINI.png" alt="KOMPOBRAT Mini" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">KOMPOBRAT Mini</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Idealne dla małych apartamentów i pojedynczych osób.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm"><strong>Pojemność:</strong> 0,5L</p>
+                            <p class="text-sm"><strong>Wymiary:</strong> 20×20×25cm</p>
+                            <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">599 zł</span></p>
+                        </div>
+                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Sprawdź szczegóły
+                        </button>
+                    </div>
+                </div>
+                </a>
+
+                <!-- Product 2: Standard -->
+                <a href="product-standard.html" class="block">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300">
+                    <img src="images/KOMPOBRATSTANDARD.png" alt="KOMPOBRAT Standard" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-2xl font-bold">KOMPOBRAT Standard</h3>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Najpopularniejszy model dla rodzin. Najlepszy stosunek ceny do jakości.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm"><strong>Pojemność:</strong> 1,0L</p>
+                            <p class="text-sm"><strong>Wymiary:</strong> 25×25×30cm</p>
+                            <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">899 zł</span></p>
+                        </div>
+                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Sprawdź szczegóły
+                        </button>
+                    </div>
+                </div>
+                </a>
+
+                <!-- Product 3: Pro Limited Edition -->
+                <a href="product-pro.html" class="block">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl smooth-transition transform hover:-translate-y-2 duration-300 ring-2 ring-kompobrat-green-600">
+                    <div class="bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 text-white px-4 py-2 text-center text-sm font-bold">
+                        ⭐ EDYCJA LIMITOWANA
+                    </div>
+                    <img src="images/KOMPOBRATPRO.png" alt="KOMPOBRAT Pro" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">KOMPOBRAT Pro</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Profesjonalny model z zaawansowanymi funkcjami. Pozostało zaledwie 67 jednostek!
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm"><strong>Pojemność:</strong> 2,0L</p>
+                            <p class="text-sm"><strong>Wymiary:</strong> 30×30×35cm</p>
+                            <p class="text-sm"><strong>Funkcje:</strong> WiFi, App, Inteligentne czujniki</p>
+                            <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">1499 zł</span></p>
+                        </div>
+                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Sprawdź szczegóły
+                        </button>
+                    </div>
+                </div>
+                </a>
+
+                <!-- Product 4: Bioactive Capsules -->
+                <a href="product-capsules.html" class="block">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300">
+                    <img src="images/KAPSULKI.png" alt="Kapsułki Bioaktywne" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Kapsułki Bioaktywne</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                            Zestaw uzupełniający do wszelkich modeli KOMPOBRAT.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm"><strong>Zawartość:</strong> 12 kapsułek</p>
+                            <p class="text-sm"><strong>Trwałość:</strong> 6-8 miesięcy</p>
+                            <p class="text-sm"><strong>Kompatybilność:</strong> Wszystkie modele</p>
+                            <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">199 zł</span></p>
+                        </div>
+                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Sprawdź szczegóły
+                        </button>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-20 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Porównanie Modeli</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="bg-gray-200 dark:bg-gray-800">
+                            <th class="p-4 text-left font-bold">Cecha</th>
+                            <th class="p-4 text-center font-bold">Mini</th>
+                            <th class="p-4 text-center font-bold">Standard</th>
+                            <th class="p-4 text-center font-bold text-kompobrat-green-600">Pro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b dark:border-gray-700">
+                            <td class="p-4 font-semibold">Pojemność</td>
+                            <td class="p-4 text-center">0,5L</td>
+                            <td class="p-4 text-center">1,0L</td>
+                            <td class="p-4 text-center">2,0L</td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:bg-opacity-30">
+                            <td class="p-4 font-semibold">Czas na nawóz</td>
+                            <td class="p-4 text-center">24h</td>
+                            <td class="p-4 text-center">24h</td>
+                            <td class="p-4 text-center">24h</td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <td class="p-4 font-semibold">WiFi & App</td>
+                            <td class="p-4 text-center">✗</td>
+                            <td class="p-4 text-center">✗</td>
+                            <td class="p-4 text-center">✓</td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-800 dark:bg-opacity-30">
+                            <td class="p-4 font-semibold">Inteligentne czujniki</td>
+                            <td class="p-4 text-center">✓</td>
+                            <td class="p-4 text-center">✓</td>
+                            <td class="p-4 text-center">✓</td>
+                        </tr>
+                        <tr class="border-b dark:border-gray-700">
+                            <td class="p-4 font-semibold">Gwarancja</td>
+                            <td class="p-4 text-center">3 lata</td>
+                            <td class="p-4 text-center">3 lata</td>
+                            <td class="p-4 text-center">3 lata</td>
+                        </tr>
+                        <tr class="bg-gray-50 dark:bg-gray-800 dark:bg-opacity-30">
+                            <td class="p-4 font-semibold">Cena</td>
+                            <td class="p-4 text-center font-bold text-kompobrat-green-600">599 zł</td>
+                            <td class="p-4 text-center font-bold text-kompobrat-green-600">899 zł</td>
+                            <td class="p-4 text-center font-bold text-kompobrat-green-600">1499 zł</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 rounded-3xl p-12 shadow-2xl">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Gotów na transformację?
+            </h2>
+            <p class="text-xl text-green-50 mb-8">
+                Wybierz swój KOMPOBRAT i zacznij kompostowanie dzisiaj.
+            </p>
+            <button class="bg-white text-kompobrat-green-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-green-50 smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">
+                Przejdź do zamówienia
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                        <span class="font-bold text-white">KOMPOBRAT</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Rewolucjonizujemy kompostowanie domowe poprzez nowoczesną technologię i design.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Produkty</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="products.html#mini" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Mini</a></li>
+                        <li><a href="products.html#standard" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Standard</a></li>
+                        <li><a href="products.html#pro" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Pro</a></li>
+                        <li><a href="products.html#capsules" class="hover:text-kompobrat-green-500 smooth-transition">Kapsułki Bioaktywne</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Obsługa</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><button onclick="openModal('warranty')" class="hover:text-kompobrat-green-500 smooth-transition cursor-pointer bg-none border-none text-left p-0">Gwarancja</button></li>
+                        <li><button onclick="openModal('shipping')" class="hover:text-kompobrat-green-500 smooth-transition cursor-pointer bg-none border-none text-left p-0">Dostarczanie</button></li>
+                        <li><button onclick="openModal('returns')" class="hover:text-kompobrat-green-500 smooth-transition cursor-pointer bg-none border-none text-left p-0">Zwroty</button></li>
+                        <li><button onclick="openModal('support')" class="hover:text-kompobrat-green-500 smooth-transition cursor-pointer bg-none border-none text-left p-0">Wsparcie</button></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📧 hello@kompobrat.pl</li>
+                        <li>📞 +48 22 XXXX XXXX</li>
+                        <li>📍 ul. Ekologiczna 42,<br>Warszawa 02-000</li>
+                        <li class="pt-4 flex gap-4">
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">LinkedIn</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Instagram</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-kompobrat-green-500 smooth-transition">Polityka Prywatności</a>
+                    <a href="terms.html" class="hover:text-kompobrat-green-500 smooth-transition">Warunki Użytkowania</a>
+                    <a href="cookies.html" class="hover:text-kompobrat-green-500 smooth-transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+
+        // Modal functions
+        function openModal(modalType) {
+            const modalId = modalType + 'Modal';
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalType) {
+            const modalId = modalType + 'Modal';
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('[id$="Modal"]');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
