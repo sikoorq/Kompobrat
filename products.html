@@ -61,9 +61,9 @@
                     <span id="sunIcon" class="text-xl">☀️</span>
                     <span id="moonIcon" class="text-xl hidden">🌙</span>
                 </button>
-                <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
-                    Zamów
-                </button>
+                <a href="cart.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg inline-block">
+                    🛒 Koszyk (<span id="cartCount">0</span>)
+                </a>
             </div>
         </div>
     </nav>
@@ -90,15 +90,15 @@
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">KOMPOBRAT Mini</h3>
                         <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
-                            Idealne dla małych apartamentów i pojedynczych osób.
+                            Idealny do małych apartamentów i pojedynczych osób.
                         </p>
                         <div class="space-y-3 mb-6">
                             <p class="text-sm"><strong>Pojemność:</strong> 0,5L</p>
                             <p class="text-sm"><strong>Wymiary:</strong> 20×20×25cm</p>
                             <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">599 zł</span></p>
                         </div>
-                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
-                            Sprawdź szczegóły
+                        <button onclick="addToCart('KOMPOBRAT Mini', 599, 'Idealny do małych apartamentów')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Dodaj do koszyka
                         </button>
                     </div>
                 </div>
@@ -120,14 +120,12 @@
                             <p class="text-sm"><strong>Wymiary:</strong> 25×25×30cm</p>
                             <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">899 zł</span></p>
                         </div>
-                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
-                            Sprawdź szczegóły
+                        <button onclick="addToCart('KOMPOBRAT Standard', 899, 'Najpopularniejszy model dla rodzin')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Dodaj do koszyka
                         </button>
                     </div>
                 </div>
                 </a>
-
-                <!-- Product 3: Pro Limited Edition -->
                 <a href="product-pro.html" class="block">
                 <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl smooth-transition transform hover:-translate-y-2 duration-300 ring-2 ring-kompobrat-green-600">
                     <div class="bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 text-white px-4 py-2 text-center text-sm font-bold">
@@ -145,8 +143,8 @@
                             <p class="text-sm"><strong>Funkcje:</strong> WiFi, App, Inteligentne czujniki</p>
                             <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">1499 zł</span></p>
                         </div>
-                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
-                            Sprawdź szczegóły
+                        <button onclick="addToCart('KOMPOBRAT Pro', 1499, 'Profesjonalny model z WiFi i App')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Dodaj do koszyka
                         </button>
                     </div>
                 </div>
@@ -162,13 +160,13 @@
                             Zestaw uzupełniający do wszelkich modeli KOMPOBRAT.
                         </p>
                         <div class="space-y-3 mb-6">
-                            <p class="text-sm"><strong>Zawartość:</strong> 12 kapsułek</p>
+                            <p class="text-sm"><strong>Zawartość:</strong> 30 kapsułek</p>
                             <p class="text-sm"><strong>Trwałość:</strong> 6-8 miesięcy</p>
                             <p class="text-sm"><strong>Kompatybilność:</strong> Wszystkie modele</p>
                             <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">199 zł</span></p>
                         </div>
-                        <button class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
-                            Sprawdź szczegóły
+                        <button onclick="addToCart('Kapsułki Bioaktywne', 199, 'Zestaw 30 kapsułek bioaktywnych')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                            Dodaj do koszyka
                         </button>
                     </div>
                 </div>
@@ -331,6 +329,45 @@
             sunIcon.classList.toggle('hidden');
             moonIcon.classList.toggle('hidden');
         });
+
+        // Cart Functions
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+        }
+
+        function addToCart(name, price, description) {
+            const cart = getCart();
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    description: description,
+                    quantity: 1
+                });
+            }
+
+            saveCart(cart);
+            alert('✅ ' + name + ' dodany do koszyka!');
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        // Initialize on page load
+        updateCartCount();
 
         // Modal functions
         function openModal(modalType) {

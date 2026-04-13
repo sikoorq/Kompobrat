@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Nas - KOMPOBRAT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        },
+                        'kompobrat-copper': '#b87333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Home</a>
+                <a href="about.html" class="text-kompobrat-green-600 dark:text-kompobrat-green-500 font-semibold">O nas</a>
+                <a href="businessplan.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Biznesplan</a>
+                <a href="products.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Produkty</a>
+                <a href="index.html#faq" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">FAQ</a>
+                <a href="index.html#footer" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Kontakt</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="cart.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    🛒 Koszyk (<span id="cartCount">0</span>)
+                </a>
+                <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Produkty
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                    <span class="text-kompobrat-green-600">Historia KOMPOBRATA</span>
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                    Od pasji do ekologii, do rewolucji w domowym kompostowaniu
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold mb-6">Nasza Misja</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        KOMPOBRAT powstał z prostej obserwacji: większość ludzi chce żyć bardziej ekologicznie, ale tradycyjne metody kompostowania są kłopotliwe, nieprzyjemne i zajmują wiele miejsca. Poszukiwaliśmy sposobu na połączenie nowoczesnej technologii z eleganckim designem.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Nasza misja to demokratyzacja zrównoważonego życia - sprawić, że ekologiczne wybory będą nie tylko ważne dla planety, ale też piękne i wygodne dla każdego dnia.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-kompobrat-green-50 to-green-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-12 shadow-lg">
+                    <div class="text-6xl mb-4">🌱</div>
+                    <h3 class="text-2xl font-bold mb-4">Zaangażowani w Zmianę</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        Każdy sprzedany Kompobrat to zmniejszenie ilości bioodpadów trafiających na wysypiska o średnio 2-3 tony rocznie.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia Timeline -->
+    <section class="py-24 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Nasza Podróż</h2>
+
+            <div class="space-y-12">
+                <!-- 2021 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-3xl font-bold text-kompobrat-green-600 mb-4">2021</h3>
+                            <h4 class="text-2xl font-bold mb-4">Początek Przygody</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                                Wszystko zaczęło się w małym laboratorium na terenie Uniwersytetu Warszawskiego. Zespół trzech entuzjastów - inżyniera, biologa i dizajnera - postanowił rozwiązać problem domowego kompostowania.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                Pierwsze prototypy były duże, głośne i niezbyt praktyczne. Ale wizja była jasna: eleganckie urządzenie, które zmieni bioodpady w nawóz w ciągu 24 godzin.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="images/Gemini_Generated_Image_7egg4d7egg4d7egg.png" alt="Pierwsze prototypy" class="w-full h-80 rounded-3xl object-cover shadow-lg">
+                    </div>
+                </div>
+
+                <!-- 2022-2023 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <img src="images/Gemini_Generated_Image_mnxafnmnxafnmnxa.png" alt="Badania i rozwój" class="w-full h-80 rounded-3xl object-cover shadow-lg">
+                    </div>
+                    <div>
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-3xl font-bold text-kompobrat-green-600 mb-4">2022-2023</h3>
+                            <h4 class="text-2xl font-bold mb-4">Badania, Rozwój i Patenty</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                                Następne 18 miesięcy to intensywne badania naukowe. Pracowaliśmy nad:
+                            </p>
+                            <ul class="text-gray-600 dark:text-gray-300 space-y-2 ml-4">
+                                <li>✓ Unikalny mikrobiom - bezpieczne bakterie przyspieszające fermentację</li>
+                                <li>✓ Systemem filtracji potrójnej - eliminującym 99,9% zapachów</li>
+                                <li>✓ Czujnikami inteligentnego dozowania - minimalizującymi zużycie energii</li>
+                                <li>✓ Designem premium - uznanym przez międzynarodowe jury</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-3xl font-bold text-kompobrat-green-600 mb-4">2024</h3>
+                            <h4 class="text-2xl font-bold mb-4">Premiera Narożna</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                                Po pięciu latach pracy, KOMPOBRAT trafił na rynek. Premiera na targach EcoTech 2024 w Berlinie zbiła wszystkie rekordy.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                                W pierwszych trzech miesiącach sprzedaliśmy ponad 5000 jednostek. Recenzje były przytłaczająco pozytywne - użytkownicy pokochali kombinację funkcjonalności, designu i wpływu na środowisko.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 bg-gradient-to-br from-kompobrat-green-600 to-kompobrat-green-700 rounded-3xl p-12 shadow-lg text-white">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h4 class="text-2xl font-bold mb-4">Nagrody</h4>
+                        <p class="leading-relaxed mb-4">
+                            Otrzymaliśmy prestiżowe nagrody za innowacyjność i design:
+                        </p>
+                        <ul class="space-y-2">
+                            <li>• EcoTech Innovation Award 2024</li>
+                            <li>• Red Dot Design Award</li>
+                            <li>• Best Sustainable Product</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2025-2026 -->
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="bg-gradient-to-br from-kompobrat-copper from-20% to-orange-100 dark:from-gray-700 dark:to-gray-800 rounded-3xl p-12 shadow-lg">
+                            <div class="text-6xl mb-4">🚀</div>
+                            <h4 class="text-2xl font-bold mb-4">Ekspansja Globalna</h4>
+                            <p class="dark:text-gray-300 leading-relaxed">
+                                Teraz ekspandujemy na rynki europejskie. Otworzyliśmy biura w czterech krajach i pracujemy nad trzema nowymi modelami produktów zaadresowanymi dla różnych potrzeb.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
+                            <h3 class="text-3xl font-bold text-kompobrat-green-600 mb-4">2025-2026</h3>
+                            <h4 class="text-2xl font-bold mb-4">Ekspansja i Przyszłość</h4>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                                Dziś Kompobrat jest obecny w 15 krajach Europy. Nasza misja to dotrzeć do każdego domu, który zainteresowany jest bardziej zrównoważonym stylem życia.
+                            </p>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-semibold">
+                                W ciągu następnych dwóch lat planujemy wprowadzić wersje do wszystkich budżetów i stylów życia. Ekspansja na rynki azjatyckie już się zaczyna.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zespół Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Nasz Zespół</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                    Pasjonujący się ludzie z różnych dziedzin, skupieni na tym samym celu: zmienić świat jednym bioodpadem na raz.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300 p-8">
+                    <h3 class="text-2xl font-bold mb-2">Igor Sikora</h3>
+                    <p class="text-kompobrat-green-600 font-semibold mb-4">Założyciel & CEO</p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Przedsiębiorca z pasją do technologii i ochrony środowiska. Wizjoner stojący za KOMPOBRATEN z doświadczeniem we wdrażaniu rozwiązań innowacyjnych na skalę globalną.
+                    </p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300 p-8">
+                    <h3 class="text-2xl font-bold mb-2">Julia Budzyla</h3>
+                    <p class="text-kompobrat-green-600 font-semibold mb-4">Szefowa Badań</p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Mikrobiolog z Uniwersytetu Warszawskiego. Autorka publikacji o mikrobiomach o zastosowaniach ekologicznych. Badania naukowe KOMPOBRATA zawdzięczają jej wiele odkryć.
+                    </p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300 p-8">
+                    <h3 class="text-2xl font-bold mb-2">Mateusz Pluciennik</h3>
+                    <p class="text-kompobrat-green-600 font-semibold mb-4">Dyrektor Dizajnu</p>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Laureat prestiżowych nagród designu. Projektował produkty dla największych marek europejskich. Jego wizja zamieniła futurystyczną technologię w eleganckie dzieło sztuki.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wartości Section -->
+    <section class="py-24 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Nasze Wartości</h2>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Wartość 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">♻️</div>
+                    <h3 class="text-2xl font-bold mb-3">Zrównoważoność</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Każdą decyzję podejmujemy z myślą o naszej planecie. Nie ma "brudnego" biznesu.
+                    </p>
+                </div>
+
+                <!-- Wartość 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">🎨</div>
+                    <h3 class="text-2xl font-bold mb-3">Doskonały Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Piękno i funkcjonalność idą w parze. Nie robimy brzydkich rzeczy dla środowiska.
+                    </p>
+                </div>
+
+                <!-- Wartość 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">🔬</div>
+                    <h3 class="text-2xl font-bold mb-3">Niepodważalna Nauka</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Każde twierdzenie jest wsparte badaniami naukowymi. Transparentność jest kluczem.
+                    </p>
+                </div>
+
+                <!-- Wartość 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 text-center">
+                    <div class="text-6xl mb-4">❤️</div>
+                    <h3 class="text-2xl font-bold mb-3">Zaangażowanie Społeczne</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Wspieramy edukację środowiskową i projekty ekologiczne w naszych społecznościach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Nasz Rzeczywisty Wpływ</h2>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-gradient-to-br from-kompobrat-green-600 to-kompobrat-green-700 rounded-3xl p-8 text-white text-center shadow-lg">
+                    <div class="text-5xl font-bold mb-2">5,000+</div>
+                    <p class="text-xl">Użytkowników na całym świecie</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-kompobrat-copper to-orange-400 rounded-3xl p-8 text-white text-center shadow-lg">
+                    <div class="text-5xl font-bold mb-2">50T+</div>
+                    <p class="text-xl">Zmniejszono bioodpadów rocznie</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-8 text-white text-center shadow-lg">
+                    <div class="text-5xl font-bold mb-2">15</div>
+                    <p class="text-xl">Krajów europejskich</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-600 to-purple-700 rounded-3xl p-8 text-white text-center shadow-lg">
+                    <div class="text-5xl font-bold mb-2">CO₂</div>
+                    <p class="text-xl">300T mniej emisji rocznie</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Dołącz do Naszej Misji</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                Każdy Kompobrat to krok w kierunku bardziej zrównoważonego przyszłości. Jesteśmy wdzięczni za każdego, który podejmuje tę decyzję.
+            </p>
+            <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 inline-block">
+                Poznaj Nasze Produkty
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                        <span class="font-bold text-white">KOMPOBRAT</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Rewolucjonizujemy kompostowanie domowe poprzez nowoczesną technologię i design.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Produkty</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Mini</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Standard</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Pro</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">Kapsułki Bioaktywne</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-kompobrat-green-500 smooth-transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-kompobrat-green-500 smooth-transition">O nas</a></li>
+                        <li><a href="index.html#faq" class="hover:text-kompobrat-green-500 smooth-transition">FAQ</a></li>
+                        <li><a href="index.html#footer" class="hover:text-kompobrat-green-500 smooth-transition">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📧 hello@kompobrat.pl</li>
+                        <li>📞 +48 22 XXXX XXXX</li>
+                        <li>📍 ul. Ekologiczna 42,<br>Warszawa 02-000</li>
+                        <li class="pt-4 flex gap-4">
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">LinkedIn</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Instagram</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-kompobrat-green-500 smooth-transition">Polityka Prywatności</a>
+                    <a href="terms.html" class="hover:text-kompobrat-green-500 smooth-transition">Warunki Użytkowania</a>
+                    <a href="cookies.html" class="hover:text-kompobrat-green-500 smooth-transition">Pliki Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        // Sprawdzenie preferencji z localStorage
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        // Event listener dla toggle
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+
+        // Smooth scroll dla linków
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Cart functions
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        // Initialize cart count on page load
+        updateCartCount();
+    </script>
+</body>
+</html>

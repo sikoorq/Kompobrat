@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOMPOBRAT - Biznesplan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        },
+                        'kompobrat-copper': '#b87333'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </div>
+
+            <div class="hidden md:flex gap-8 items-center">
+                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Home</a>
+                <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">O nas</a>
+                <a href="businessplan.html" class="text-kompobrat-green-600 dark:text-kompobrat-green-500 font-semibold">Biznesplan</a>
+                <a href="products.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Produkty</a>
+                <a href="index.html#faq" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">FAQ</a>
+                <a href="index.html#footer" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 dark:hover:text-kompobrat-green-500 smooth-transition">Kontakt</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="cart.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    🛒 Koszyk (<span id="cartCount">0</span>)
+                </a>
+                <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2.5 rounded-lg font-medium smooth-transition shadow-md hover:shadow-lg">
+                    Produkty
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Biznesplan KOMPOBRAT</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300">Perspektywa wzrostu rynku domowego kompostowania</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">Aktualizacja: Kwiecień 2026</p>
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 mb-12">
+                <h2 class="text-2xl font-bold mb-6">Spis treści</h2>
+                <ul class="space-y-3 columns-1 md:columns-2">
+                    <li><a href="#executive-summary" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">1. Streszczenie Zarządcze</a></li>
+                    <li><a href="#company-description" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">2. Opis Firmy i Produktu</a></li>
+                    <li><a href="#market-analysis" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">3. Analiza Rynku</a></li>
+                    <li><a href="#target-market" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">4. Rynek Docelowy</a></li>
+                    <li><a href="#marketing-strategy" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">5. Strategie Marketingowe</a></li>
+                    <li><a href="#revenue-model" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">6. Model Przychodów</a></li>
+                    <li><a href="#financial-projections" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">7. Projekcje Finansowe</a></li>
+                    <li><a href="#operational-plan" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">8. Plan Operacyjny</a></li>
+                    <li><a href="#team" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">9. Zespół</a></li>
+                    <li><a href="#expansion" class="text-kompobrat-green-600 hover:text-kompobrat-green-700">10. Plany Ekspansji</a></li>
+                </ul>
+            </div>
+
+            <!-- 1. Streszczenie Zarządcze -->
+            <section id="executive-summary" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">1. Streszczenie Zarządcze</h2>
+                <div class="space-y-6">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                        Kompobrat to innowacyjna technologia kompostowania domowego, która zmienia sposób, w jaki gospodarcze zajmują się odpadami organicznymi. W ciągu zaledwie 24 godzin transformuje bioodpady kuchenne w pełnowartościowy nawóz organiczny.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="bg-kompobrat-green-50 dark:bg-gray-800 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-semibold mb-2">SZACUNKOWY WKŁAD</p>
+                            <p class="text-3xl font-bold text-kompobrat-green-600">2.5M zł</p>
+                            <p class="text-xs text-gray-500 mt-2">Inwestycja początkowa</p>
+                        </div>
+                        <div class="bg-kompobrat-green-50 dark:bg-gray-800 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-semibold mb-2">PROGNOZA PRZYCHODÓW (ROK 2)</p>
+                            <p class="text-3xl font-bold text-kompobrat-green-600">15.8M zł</p>
+                            <p class="text-xs text-gray-500 mt-2">Przychody całoroczne</p>
+                        </div>
+                        <div class="bg-kompobrat-green-50 dark:bg-gray-800 rounded-xl p-6">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 font-semibold mb-2">ZYSK NETTO (ROK 2)</p>
+                            <p class="text-3xl font-bold text-kompobrat-green-600">3.2M zł</p>
+                            <p class="text-xs text-gray-500 mt-2">Marża netto: 20%</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Command Description -->
+            <section id="company-description" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">2. Opis Firmy i Produktu</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Misja KOMPOBRAT</h3>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Zwiększyć świadomość ekologiczną polskich gospodarstw domowych poprzez dostarczenie eleganckich, niezawodnych technologii redukcji odpadów organicznych. Chcemy, aby kompostowanie stało się naturalną częścią codziennego stylu życia, a nie dodatkowym obciążeniem.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Linia Produktowa</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">•</span>
+                                <div>
+                                    <p class="font-semibold">KOMPOBRAT Mini (599 zł)</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Dla małych mieszkań i domów, pojemność 0.5L, idealna dla 1-2 osób</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">•</span>
+                                <div>
+                                    <p class="font-semibold">KOMPOBRAT Standard (899 zł)</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Bestseller, pojemność 1.0L, dla rodzin 2-4 osób, najlepszy stosunek ceny do jakości</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">•</span>
+                                <div>
+                                    <p class="font-semibold">KOMPOBRAT Pro (1499 zł)</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Edycja Premium, pojemność 2.0L, WiFi + aplikacja mobilna, dla dużych domów i restauracji</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">•</span>
+                                <div>
+                                    <p class="font-semibold">Kapsułki Bioaktywne (199 zł/30-pack)</p>
+                                    <p class="text-gray-600 dark:text-gray-400 text-sm">Mikrobiologia proprietary, wymAgane co 2-3 tygodnie, stabilny przychód</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Unikalne Cechy Produktu</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">🚀 Szybkość</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Nawóz gotowy w 24 godziny (vs 3-6 miesięcy u konkurencji)</p>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">✨ Brak Zapachów</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Potrójny system filtracji + szczelne zamknięcie</p>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">🎨 Design</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Elegancka mięta, naturalne drewno i miedziane detale</p>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">⚡ Technologia</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Hybrydowe zasilanie (słoneczne + bateria), WiFi na modelach Pro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Market Analysis -->
+            <section id="market-analysis" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">3. Analiza Rynku</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Rozmiar i Perspektywy Rynku</h3>
+                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Europejski rynek kompostowników domowych</span>
+                                <span class="text-kompobrat-green-600 font-bold">2.8 miliardów EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Prognozowany wzrost (średniodrocznie 2024-2030)</span>
+                                <span class="text-kompobrat-green-600 font-bold">18.2% rocznie</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Polski segment ekologicznych produktów</span>
+                                <span class="text-kompobrat-green-600 font-bold">450 milionów EUR</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold">Potencjalny rynek do podboju (2026)</span>
+                                <span class="text-kompobrat-green-600 font-bold">15.5 milionów EUR</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Trendy Rynkowe</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600">→</span>
+                                <p><strong>Świadomość Ekologiczna:</strong> 73% Polaków deklaruje zainteresowanie ekologią i recyklingiem (badanie GfK 2025)</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600">→</span>
+                                <p><strong>Uzbrojenie Domów Inteligentnych:</strong> IoT pojawiają się nawet w produktach niskiego segmentu cenowego</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600">→</span>
+                                <p><strong>Prawa Ekologiczne:</strong> UE zmienia przepisy dot. segregacji bioodpadów - nowe możliwości dla firm</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600">→</span>
+                                <p><strong>Premium Design:</strong> Klienci gotowi płacić więcej za produkty funkcjonalne i estetyczne</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Target Market -->
+            <section id="target-market" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">4. Rynek Docelowy</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Segmentacja Klientów</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="border-2 border-kompobrat-green-200 dark:border-kompobrat-green-900 rounded-xl p-6">
+                                <p class="text-xl font-bold text-kompobrat-green-600 mb-3">🏠 Segment Rezydencjalny (75%)</p>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Wiek:</strong> 28-55 lat</li>
+                                    <li><strong>Dochód:</strong> 8,000-15,000 zł/mies.</li>
+                                    <li><strong>Lokalizacja:</strong> Miasta tier 1-2</li>
+                                    <li><strong>Motywacja:</strong> Ekologia, zdrowsze rośliny</li>
+                                    <li><strong>Zakup:</strong> Online + salony</li>
+                                </ul>
+                            </div>
+                            <div class="border-2 border-kompobrat-green-200 dark:border-kompobrat-green-900 rounded-xl p-6">
+                                <p class="text-xl font-bold text-kompobrat-green-600 mb-3">🏢 Segment B2B (25%)</p>
+                                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                                    <li><strong>Segmenty:</strong> Restauracje, kawiarnie, hotele</li>
+                                    <li><strong>Motywacja:</strong> CSR, etyketa, zmniejszenie kosztów odpadów</li>
+                                    <li><strong>Budżet:</strong> 20,000-50,000 zł/rok</li>
+                                    <li><strong>Decyzja:</strong> Menadżerowie/Właściciele</li>
+                                    <li><strong>Kanał:</strong> Bezpośredni B2B</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Persona Klienta (Rezydencjalny)</h3>
+                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                            <p class="text-lg font-bold mb-4">Anna & Krzysztof - "Świadomi Rodzice"</p>
+                            <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                <li><strong>Profil:</strong> Małżeństwo, 35-45 lat, 2 dzieci, dom w pobliżu Warszawy</li>
+                                <li><strong>Dochód:</strong> 12,000 zł brutto/mies. (razem)</li>
+                                <li><strong>Wartości:</strong> Ekologia, zdrowie rodziny, edukacja dzieci</li>
+                                <li><strong>Problem:</strong> Bioodpady z kuchni, chęć ekologicznego nawozu dla ogrodu</li>
+                                <li><strong>Oczekiwania:</strong> Brak zapachów, łatwo w użyciu, elegancki design</li>
+                                <li><strong>Kanał zakupu:</strong> Instagram, rekomendacje od znajomych, Google</li>
+                                <li><strong>Gotowość zapłaty:</strong> 800-1500 zł za idealne rozwiązanie</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Marketing Strategy -->
+            <section id="marketing-strategy" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">5. Strategie Marketingowe</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Kanały Margetingowe</h3>
+                        <div class="space-y-4">
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold text-lg mb-2">🌐 E-commerce (40% przychodów)</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Własny sklep online + Allegro, Amazon, Empik</p>
+                                <p class="text-xs text-gray-500">Budżet: 80,000 zł/rok | Koszt pozyskania: 150-200 zł | Wartość klienta: 3,000+ zł</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold text-lg mb-2">📱 Social Media & Influencerzy (25%)</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Instagram, TikTok, YouTube - współpraca z ekobloggerami</p>
+                                <p class="text-xs text-gray-500">Budżet: 60,000 zł/rok | Zasięg: 500k+ | Zaangażowanie: 8-12%</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold text-lg mb-2">🏪 Kanał Offline (20%)</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Salony ekologicznych produktów, sklepy designerskie, niszowe sieci</p>
+                                <p class="text-xs text-gray-500">Budżet: 40,000 zł/rok | Marża handlowca: 30-40% | Powtarzające się zamówienia: 60%+</p>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold text-lg mb-2">B2B & Partnerstwa (15%)</p>
+                                <p class="text-gray-700 dark:text-gray-300 text-sm mb-3">Sprzedaż bezpośrednia do restauracji, hoteli, osiedli</p>
+                                <p class="text-xs text-gray-500">Budżet: 30,000 zł/rok | Rozmiar umowy: 3,000-15,000 zł | Łączny czas: 24-36 mies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Strategia Contentu i PR</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">A)</span>
+                                <p><strong>Blog & SEO:</strong> Artykuły na temat kompostowania, ekologii, zdrowe rośliny - pozycjonowanie na popularne wyszukiwania</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">B)</span>
+                                <p><strong>PR Ekologiczny:</strong> Współpraca z organizacjami pro-ekologicznymi, media coverage w portalach o ekologii</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">C)</span>
+                                <p><strong>User Generated Content:</strong> Zachęcanie klientów do dzielenia się zdjęciami produktu - kampania #MójKOMPOBRAT</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">D)</span>
+                                <p><strong>Referral Program:</strong> Polecaj znajomym, zarabiam do 15% zniżki na kolejny zakup</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Revenue Model -->
+            <section id="revenue-model" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">6. Model Przychodów</h2>
+                <div class="space-y-8">
+                    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
+                        <h3 class="text-2xl font-bold mb-6">Źródła Przychodów</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+                                <div>
+                                    <p class="font-semibold">Sprzedaż Urządzeń (70%)</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Mini (599 zł), Standard (899 zł), Pro (1499 zł)</p>
+                                </div>
+                                <p class="text-kompobrat-green-600 font-bold">11.1M zł (Rok 2)</p>
+                            </div>
+                            <div class="flex justify-between items-center pb-4 border-b-2 border-gray-200 dark:border-gray-700">
+                                <div>
+                                    <p class="font-semibold">Kapsułki Bioaktywne (20%)</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Powtarzające się średnio co 2-3 tygodnie (199 zł za opakowanie 30-pack)</p>
+                                </div>
+                                <p class="text-kompobrat-green-600 font-bold">3.2M zł (Rok 2)</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="font-semibold">Serwis & Akcesoria (10%)</p>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">Filtry węglowe, części zamienne, konsultacje techniczne</p>
+                                </div>
+                                <p class="text-kompobrat-green-600 font-bold">1.5M zł (Rok 2)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Marże i Koszty</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold mb-3">KOMPOBRAT Standard (899 zł)</p>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex justify-between"><span>Koszty produkcji:</span><span class="font-semibold">280 zł</span></li>
+                                    <li class="flex justify-between"><span>Marża produkcenta:</span><span class="font-semibold">299 zł (37%)</span></li>
+                                    <li class="flex justify-between"><span>Marża handlowca (30%):</span><span class="font-semibold">270 zł</span></li>
+                                </ul>
+                            </div>
+                            <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6">
+                                <p class="font-bold mb-3">Kapsułki Bioaktywne (199 zł/30-pack)</p>
+                                <ul class="space-y-2 text-sm">
+                                    <li class="flex justify-between"><span>Koszty produkcji:</span><span class="font-semibold">45 zł</span></li>
+                                    <li class="flex justify-between"><span>Marża producentą:</span><span class="font-semibold">100 zł (55%)</span></li>
+                                    <li class="flex justify-between"><span>Koszt dostawy:</span><span class="font-semibold">20 zł</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Financial Projections -->
+            <section id="financial-projections" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">7. Projekcje Finansowe (3-letni plan)</h2>
+                <div class="space-y-8">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-kompobrat-green-600 text-white">
+                                <tr>
+                                    <th class="px-4 py-3 text-left">Metrika</th>
+                                    <th class="px-4 py-3 text-right">Rok 1</th>
+                                    <th class="px-4 py-3 text-right">Rok 2</th>
+                                    <th class="px-4 py-3 text-right">Rok 3</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td class="px-4 py-3"><strong>Przychód całkowity</strong></td>
+                                    <td class="px-4 py-3 text-right">6.2M zł</td>
+                                    <td class="px-4 py-3 text-right">15.8M zł</td>
+                                    <td class="px-4 py-3 text-right">32.1M zł</td>
+                                </tr>
+                                <tr class="bg-gray-50 dark:bg-gray-900">
+                                    <td class="px-4 py-3"><strong>Sprzedane jednostki</strong></td>
+                                    <td class="px-4 py-3 text-right">4,200 szt.</td>
+                                    <td class="px-4 py-3 text-right">11,500 szt.</td>
+                                    <td class="px-4 py-3 text-right">22,800 szt.</td>
+                                </tr>
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td class="px-4 py-3"><strong>Koszt sprzedanych towarów</strong></td>
+                                    <td class="px-4 py-3 text-right">2.2M zł</td>
+                                    <td class="px-4 py-3 text-right">5.1M zł</td>
+                                    <td class="px-4 py-3 text-right">9.6M zł</td>
+                                </tr>
+                                <tr class="bg-gray-50 dark:bg-gray-900">
+                                    <td class="px-4 py-3"><strong>Marża brutto</strong></td>
+                                    <td class="px-4 py-3 text-right">64%</td>
+                                    <td class="px-4 py-3 text-right">66%</td>
+                                    <td class="px-4 py-3 text-right">70%</td>
+                                </tr>
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td class="px-4 py-3"><strong>Koszty operacyjne</strong></td>
+                                    <td class="px-4 py-3 text-right">3.8M zł</td>
+                                    <td class="px-4 py-3 text-right">9.2M zł</td>
+                                    <td class="px-4 py-3 text-right">16.5M zł</td>
+                                </tr>
+                                <tr class="bg-gray-50 dark:bg-gray-900">
+                                    <td class="px-4 py-3"><strong>EBITDA</strong></td>
+                                    <td class="px-4 py-3 text-right">0.2M zł</td>
+                                    <td class="px-4 py-3 text-right">1.5M zł</td>
+                                    <td class="px-4 py-3 text-right">6.0M zł</td>
+                                </tr>
+                                <tr class="bg-white dark:bg-gray-800">
+                                    <td class="px-4 py-3"><strong>Zysk netto</strong></td>
+                                    <td class="px-4 py-3 text-right">-0.5M zł</td>
+                                    <td class="px-4 py-3 text-right">1.0M zł</td>
+                                    <td class="px-4 py-3 text-right">4.5M zł</td>
+                                </tr>
+                                <tr class="bg-kompobrat-green-50 dark:bg-kompobrat-green-900">
+                                    <td class="px-4 py-3"><strong>Marża netto</strong></td>
+                                    <td class="px-4 py-3 text-right">-8%</td>
+                                    <td class="px-4 py-3 text-right">6.3%</td>
+                                    <td class="px-4 py-3 text-right">14%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Przepływ Pieniężny i Punkt Zwrotu Inwestycji</h3>
+                        <div class="bg-gradient-to-r from-kompobrat-green-50 to-green-50 dark:from-gray-800 dark:to-gray-800 rounded-xl p-8">
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">BREAKEVEN (punkt zwrotu)</p>
+                                    <p class="text-3xl font-bold text-kompobrat-green-600">Miesiąc 18</p>
+                                    <p class="text-xs text-gray-500 mt-2">Połowa roku drugiego</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">ROI (3-letni)</p>
+                                    <p class="text-3xl font-bold text-kompobrat-green-600">180%</p>
+                                    <p class="text-xs text-gray-500 mt-2">Zwrot poniżej 3 lat</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">Kumulowany CF (Rok 3)</p>
+                                    <p class="text-3xl font-bold text-kompobrat-green-600">+2.5M zł</p>
+                                    <p class="text-xs text-gray-500 mt-2">Z włączonym reinwestowaniem</p>
+                                </div>
+                            </div>
+                            <p class="text-center text-sm text-gray-600 dark:text-gray-400 mt-6">
+                                Rok 1 jest stratą dla budowania bazy klientów. Od Roku 2 osiągamy rentowność, którą przyspieszamy iteracyjnie.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Operational Plan -->
+            <section id="operational-plan" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">8. Plan Operacyjny</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Produkcja & Supply Chain</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">📦</span>
+                                <p><strong>Producent:</strong> Zakład produkcji w Łodzi (outsourcing głównych komponentów)</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">📦</span>
+                                <p><strong>Pojemność:</strong> 1,000 jednostek/mies. w Year 1, scaling do 5,000+ w Roku 3</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">📦</span>
+                                <p><strong>Logistyka:</strong> Partnerstwo z InPost dla B2C, własna flota dla B2B</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">📦</span>
+                                <p><strong>Magazyn:</strong> Centrum dystrybucji w Warszawie, storage capacity 500 jednostek</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Struktura Organizacyjna (Rok 1)</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">Zarządzanie (3 osoby)</p>
+                                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                    <li>• Prezes/CEO</li>
+                                    <li>• Dyrektor Finansów/Operacji</li>
+                                    <li>• Dyrektor Techniczny/Rozwój Produktu</li>
+                                </ul>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">Sprzedaż & Marketing (4 osoby)</p>
+                                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                    <li>• Kierownik Sprzedaży</li>
+                                    <li>• Specjalista E-commerce</li>
+                                    <li>• Manager PR/Influencerów</li>
+                                    <li>• Menedżer Mediów Społecznych</li>
+                                </ul>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">Obsługa Klienta (2 osoby)</p>
+                                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                    <li>• Menedżer Relacji Klienta</li>
+                                    <li>• Specjalista Wsparcia (część etatu)</li>
+                                </ul>
+                            </div>
+                            <div class="border-l-4 border-kompobrat-green-600 pl-4">
+                                <p class="font-semibold mb-2">Operacje (3 osoby)</p>
+                                <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                                    <li>• Kierownik Magazynu</li>
+                                    <li>• Koordynator Logistyki (outsourcing)</li>
+                                    <li>• Programista (część etatu)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Miesięczne Koszty Operacyjne (Rok 1)</h3>
+                        <div class="space-y-2 bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                            <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-gray-700">
+                                <span>Wynagrodzenia</span>
+                                <span class="font-semibold">85,000 zł</span>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-gray-700">
+                                <span>Marketing i Reklama</span>
+                                <span class="font-semibold">35,000 zł</span>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-gray-700">
+                                <span>Biuro & Infrastruktura</span>
+                                <span class="font-semibold">12,000 zł</span>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-200 dark:border-gray-700">
+                                <span>Magazyn & Logistyka</span>
+                                <span class="font-semibold">18,000 zł</span>
+                            </div>
+                            <div class="flex justify-between pt-2 text-lg font-bold">
+                                <span>RAZEM</span>
+                                <span class="text-kompobrat-green-600">150,000 zł/mies.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Team -->
+            <section id="team" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">9. Zespół Zarządzający</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border-2 border-kompobrat-green-200 dark:border-kompobrat-green-900">
+                        <p class="text-xl font-bold mb-2">Igor Sikora</p>
+                        <p class="text-kompobrat-green-600 font-semibold mb-4">Założyciel & Dyrektor Zarządzający</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                            Przedsiębiorca seriowy z 12 latami doświadczenia w technologicznych startupach. Wcześniej: Dyrektor Techniczny w EcoVentures (przejęta 2020). Pasjonata zrównoważonego rozwoju i innowacji.
+                        </p>
+                        <p class="text-xs text-gray-500">Edukacja: Politechnika Warszawska, MBA IESE</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border-2 border-kompobrat-green-200 dark:border-kompobrat-green-900">
+                        <p class="text-xl font-bold mb-2">Julia Budzyla</p>
+                        <p class="text-kompobrat-green-600 font-semibold mb-4">Kierownik Badań i Produktu</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                            Doktor biotechnologii z Uniwersytetu Warszawskiego. Publikacje i patenty w kompostowaniu mikrobiologicznym. Była kierownik działu badań i rozwoju w renomowanym laboratorium biotechnologicznym.
+                        </p>
+                        <p class="text-xs text-gray-500">Doświadczenie: 8 lat badań prywatnych i publicznych</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 border-2 border-kompobrat-green-200 dark:border-kompobrat-green-900">
+                        <p class="text-xl font-bold mb-2">Mateusz Pluciennik</p>
+                        <p class="text-kompobrat-green-600 font-semibold mb-4">Dyrektor Designu</p>
+                        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                            Laureat nagrody międzynarodowej (Międzynarodowe Muzeum Designu). Portfolio: produkty dla Philips, Ikea, marek luksusowych. Specjalizacja: zrównoważony design produktów.
+                        </p>
+                        <p class="text-xs text-gray-500">Projekty: 25+ produktów na rynku</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Expansion Plan -->
+            <section id="expansion" class="mb-16">
+                <h2 class="text-4xl font-bold mb-8 text-kompobrat-green-600">10. Plany Ekspansji</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Faza 1: Ekspansja Krajowa (Rok 1-2)</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">1️⃣</span>
+                                <p><strong>Q2 2026:</strong> Oficjalne otwarcie sklepu online, rozruch produkcji w Łodzi</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">2️⃣</span>
+                                <p><strong>Q3 2026:</strong> Partnerstwa z 20+ salonami designu i sklepami ekologią, start kampanii PRowej</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">3️⃣</span>
+                                <p><strong>Q4 2026:</strong> Dołączenie do Allegro i Amazon.pl, kampania Black Friday 2026</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">4️⃣</span>
+                                <p><strong>Koniec 2026:</strong> 4,200 jednostek sprzedanych, 5,000+ klientów aktywnych, target revenue 6.2M zł</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Faza 2: Konsolidacja & B2B (Rok 2-3)</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">1️⃣</span>
+                                <p><strong>2027:</strong> Intensywna kampania B2B - partnerstwa z łańcuchami restauracji, hotelami, osiedlami</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">2️⃣</span>
+                                <p><strong>2027:</strong> Premiera KOMPOBRAT Pro z aplikacją mobilną, uruchomienie ekosystemu IoT</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">3️⃣</span>
+                                <p><strong>2027:</strong> Scaling do 11,500 jednostek/rok, przychód 15.8M zł</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Faza 3: Ekspansja Europejska (Rok 3+)</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">1️⃣</span>
+                                <p><strong>2028:</strong> Pierwsze zagraniczni partnerzy dystrybucji w Niemczech i Francji</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">2️⃣</span>
+                                <p><strong>2028:</strong> Certyfikacja EU dla wszystkich modeli, dostosowanie do regulacji lokalnych</p>
+                            </li>
+                            <li class="flex gap-4">
+                                <span class="text-kompobrat-green-600 font-bold">3️⃣</span>
+                                <p><strong>2029:</strong> Dostępność w 8+ krajach europejskich, revenue 32M+ zł</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Potencjalne Dodatkowe Linie Produktów</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                                <p class="font-semibold mb-2">🌱 KOMPOBRAT Garden (2028)</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Zewnętrzny kompostownik do ogrodów (100L), bez elektroniki, ekologiczny</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                                <p class="font-semibold mb-2">🏢 KOMPOBRAT Biznesowy (2028)</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Duży model dla restauracji (5-10L), system zarządzania w chmurze</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                                <p class="font-semibold mb-2">🧪 Inteligentny Monitoring (2029)</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Czujniki do domów (wilgotność, temperatura), analityka w aplikacji</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4">
+                                <p class="font-semibold mb-2">♻️ Partnerstwo Recyklingu (2029)</p>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Integracja z serwisem recyklingu - od nawozu do ponownego użytku</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="mt-20 py-16 bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 rounded-3xl text-white">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6">Zainteresowany Biznesplanem KOMPOBRAT?</h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">
+                        Szukamy inwestorów, partnerów strategicznych i talentów do zespołu. Poznaj szczegóły i dołącz do naszej ekologicznej rewolucji.
+                    </p>
+                    <div class="flex gap-4 justify-center flex-wrap">
+                        <a href="index.html#footer" class="bg-white text-kompobrat-green-600 px-8 py-4 rounded-lg font-bold hover:bg-green-50 smooth-transition">
+                            Skontaktuj się z nami
+                        </a>
+                        <a href="products.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:bg-opacity-10 smooth-transition">
+                            Poznaj Produkty
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                        <span class="font-bold text-white">KOMPOBRAT</span>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        Rewolucjonizujemy kompostowanie domowe poprzez nowoczesną technologię i design.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Produkty</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Mini</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Standard</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">KOMPOBRAT Pro</a></li>
+                        <li><a href="products.html" class="hover:text-kompobrat-green-500 smooth-transition">Kapsułki Bioaktywne</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Firma</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="about.html" class="hover:text-kompobrat-green-500 smooth-transition">O nas</a></li>
+                        <li><a href="businessplan.html" class="hover:text-kompobrat-green-500 smooth-transition">Biznesplan</a></li>
+                        <li><a href="index.html#faq" class="hover:text-kompobrat-green-500 smooth-transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Praca</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-4">Kontakt</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>📧 hello@kompobrat.pl</li>
+                        <li>📞 +48 22 XXXX XXXX</li>
+                        <li>📍 ul. Ekologiczna 42,<br>Warszawa 02-000</li>
+                        <li class="pt-4 flex gap-4">
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">LinkedIn</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Instagram</a>
+                            <a href="#" class="hover:text-kompobrat-green-500 smooth-transition">Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="privacy.html" class="hover:text-kompobrat-green-500 smooth-transition">Polityka Prywatności</a>
+                    <a href="terms.html" class="hover:text-kompobrat-green-500 smooth-transition">Warunki Użytkowania</a>
+                    <a href="cookies.html" class="hover:text-kompobrat-green-500 smooth-transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode & Cart Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        // Sprawdzenie preferencji z localStorage
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        // Event listener dla toggle
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+
+        // Smooth scroll dla linków
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Cart functions
+        function getCart() {
+            const cart = localStorage.getItem('cart');
+            return cart ? JSON.parse(cart) : [];
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+
+        // Initialize cart count on page load
+        updateCartCount();
+    </script>
+</body>
+</html>
