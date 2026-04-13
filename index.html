@@ -82,9 +82,9 @@
                     niezauważalna dla oka. Zmienia odpady bioodpadów w żyzny nawóz w zaledwie 24 godziny.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <button class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300">
-                        Zamów teraz - Edycja Limitowana
-                    </button>
+                    <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 text-center">
+                        Zobacz nasze produkty
+                    </a>
                     <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-8 py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition">
                         Obejrzyj film
                     </button>
@@ -506,7 +506,27 @@
 
     <!-- Version Badge -->
     <div class="fixed bottom-6 right-6 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-full text-xs font-semibold opacity-50 hover:opacity-75 smooth-transition cursor-default">
-        Build: 0.1.0 Beta
+        Beta Tests
+    </div>
+
+    <!-- Cookie Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 px-6 py-4 shadow-2xl z-40 smooth-transition">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1">
+                <p class="text-sm">
+                    🍪 Używamy plików cookies do poprawy doświadczenia użytkownika. Aby dowiedzieć się więcej, przeczytaj naszą 
+                    <a href="cookies.html" class="text-kompobrat-green-500 hover:text-kompobrat-green-400 smooth-transition font-semibold">Politykę Cookies</a>.
+                </p>
+            </div>
+            <div class="flex gap-3 flex-shrink-0">
+                <button onclick="acceptCookies()" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 py-2 rounded-lg font-semibold smooth-transition text-sm">
+                    Akceptuję
+                </button>
+                <button onclick="rejectCookies()" class="bg-gray-700 hover:bg-gray-600 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-300 px-6 py-2 rounded-lg font-semibold smooth-transition text-sm">
+                    Odrzucam
+                </button>
+            </div>
+        </div>
     </div>
 
     <!-- Dark Mode Script -->
@@ -568,6 +588,27 @@
                 }
             });
         });
+
+        // Cookie Banner functions
+        const cookieBanner = document.getElementById('cookieBanner');
+
+        // Check if cookies were previously accepted
+        if (localStorage.getItem('cookiesAccepted') === 'true') {
+            cookieBanner.style.display = 'none';
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.style.opacity = '0';
+            cookieBanner.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 300);
+        }
+
+        function rejectCookies() {
+            window.open('https://www.youtube.com/watch?v=Zlw8qVbi8xs', '_blank');
+        }
     </script>
 </body>
 </html>

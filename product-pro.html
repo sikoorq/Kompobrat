@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOMPOBRAT Pro - Produkt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'kompobrat-green': {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d'
+                        },
+                        'kompobrat-dark': {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            900: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .smooth-transition {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white dark:bg-kompobrat-dark-900 border-b border-gray-200 dark:border-gray-800 smooth-transition">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-1">
+                <img src="images/Kompobrat.png" alt="KOMPOBRAT Logo" class="w-16 h-16 object-contain">
+                <span class="font-bold text-lg dark:text-white">KOMPOBRAT</span>
+            </a>
+            
+            <div class="flex items-center gap-4">
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 smooth-transition">
+                    <span id="sunIcon" class="text-xl">☀️</span>
+                    <span id="moonIcon" class="text-xl hidden">🌙</span>
+                </button>
+                <a href="products.html" class="text-gray-700 dark:text-gray-300 hover:text-kompobrat-green-600 font-medium">
+                    ← Powrót do produktów
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Hero -->
+    <section class="py-12 px-6 bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700">
+        <div class="max-w-7xl mx-auto">
+            <div class="inline-block bg-white text-kompobrat-green-600 px-4 py-2 rounded-full font-bold mb-4">⭐ EDYCJA LIMITOWANA</div>
+            <h1 class="text-5xl font-bold text-white mb-4">KOMPOBRAT Pro</h1>
+            <p class="text-xl text-green-50">Profesjonalny model z zaawansowanymi funkcjami - Pozostało zaledwie 67 jednostek!</p>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Image -->
+                <div>
+                    <img src="images/KOMPOBRATPRO.png" alt="KOMPOBRAT Pro" class="w-full rounded-2xl shadow-xl">
+                </div>
+
+                <!-- Info & Purchase -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-4">O produkcie</h2>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                            KOMPOBRAT Pro to ostateczne wcielenie technologii kompostowania. Projektowany dla entuzjastów zainteresowanych pełną kontrolą i monitorowaniem procesu.
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                            Wyposażony w WiFi, dedykowaną aplikację mobilną i zaawansowane czujniki do śledzenia każdego aspektu kompostowania w czasie rzeczywistym. Większa pojemność oznacza również mniej częste przebieg cykli.
+                        </p>
+                    </div>
+
+                    <!-- Specifications -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Specyfikacja</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Pojemność</p>
+                                <p class="text-2xl font-bold text-kompobrat-green-600">2,0L</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Wymiary</p>
+                                <p class="text-2xl font-bold">30×30×35cm</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Czas na nawóz</p>
+                                <p class="text-2xl font-bold">24 godziny</p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Waga</p>
+                                <p class="text-2xl font-bold">5,0 kg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price & CTA -->
+                    <div class="bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700 p-8 rounded-2xl text-white">
+                        <p class="text-green-100 mb-2">Cena</p>
+                        <p class="text-5xl font-bold text-white mb-6">1 499 zł</p>
+                        <button class="w-full bg-white text-kompobrat-green-600 hover:bg-green-50 py-4 rounded-lg font-bold text-lg smooth-transition shadow-lg">
+                            Zarezerwuj teraz
+                        </button>
+                        <p class="text-center text-green-100 text-sm mt-4">Edycja limitowana: pozostało 67 jednostek</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Features -->
+            <div class="grid md:grid-cols-3 gap-8 py-16 border-t dark:border-gray-800">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span class="text-2xl">📱</span> Aplikacja Mobilna
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Monitoruj proces kompostowania z telefonu – sprawdzaj status, historię cykli i otrzymuj powiadomienia.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span class="text-2xl">📊</span> Zaawansowane Czujniki
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        8 dedykowanych czujników monitoruje temperaturę, wilgotność, poziom materiału i więcej w czasie rzeczywistym.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-3">
+                        <span class="text-2xl">🌐</span> WiFi Connectivity
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Wbudowany WiFi umożliwia zdalne zarządzanie i integrację z innymi urządzeniami smart home.
+                    </p>
+                </div>
+            </div>
+
+            <!-- In the Box -->
+            <div class="py-16 bg-gray-50 dark:bg-gray-800 dark:bg-opacity-50 -mx-6 px-6 rounded-2xl">
+                <h3 class="text-2xl font-bold mb-8">Co zawiera opakowanie PREMIUM?</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">📦</span>
+                        <div>
+                            <p class="font-bold">Urządzenie KOMPOBRAT Pro</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Kompletne z wyświetlaczem LED</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">📱</span>
+                        <div>
+                            <p class="font-bold">Dostęp do Premium App</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Na całe 3 lata gwarancji</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">💊</span>
+                        <div>
+                            <p class="font-bold">3x Zestawy Kapsułek</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Dla pierwszych 12 miesięcy</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">📖</span>
+                        <div>
+                            <p class="font-bold">Instrukcja obsługi PREMIUM</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">6 języków, oprawa twarda</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">🛡️</span>
+                        <div>
+                            <p class="font-bold">Rozszerzona gwarancja</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">3 lata + rozszerzony support</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <span class="text-2xl">⭐</span>
+                        <div>
+                            <p class="font-bold">VIP Support Priority</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Szybka obsługa i wsparcie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Features -->
+            <div class="py-16 border-t dark:border-gray-800">
+                <h3 class="text-2xl font-bold mb-8">Inteligentne Funkcje AI</h3>
+                <div class="bg-gradient-to-r from-blue-50 to-green-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl">
+                    <ul class="space-y-4">
+                        <li class="flex gap-4">
+                            <span class="text-kompobrat-green-600 font-bold">✓</span>
+                            <div>
+                                <p class="font-bold">Predictive Analytics</p>
+                                <p class="text-gray-600 dark:text-gray-400">AI przewiduje, kiedy będzie gotowy nawóz zanim się stanie</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-kompobrat-green-600 font-bold">✓</span>
+                            <div>
+                                <p class="font-bold">Adaptive Learning</p>
+                                <p class="text-gray-600 dark:text-gray-400">System uczy się twoich nawyków i optymalizuje proces</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-kompobrat-green-600 font-bold">✓</span>
+                            <div>
+                                <p class="font-bold">Automatyczne Raporty</p>
+                                <p class="text-gray-600 dark:text-gray-400">Cotygodniowe podsumowania i rekomendacje w aplikacji</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-300 dark:text-gray-400 smooth-transition mt-20">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="text-center text-sm">
+                <p>© 2026 KOMPOBRAT. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode Script -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const sunIcon = document.getElementById('sunIcon');
+        const moonIcon = document.getElementById('moonIcon');
+        const htmlElement = document.documentElement;
+
+        const isDarkMode = localStorage.getItem('darkMode') === 'true' || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') === null);
+
+        if (isDarkMode) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            const isDark = htmlElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            sunIcon.classList.toggle('hidden');
+            moonIcon.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
