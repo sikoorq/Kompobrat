@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#16a34a">
     <title>KOMPOBRAT Pro - Produkt</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,6 +38,20 @@
         .smooth-transition {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            button, a[class*="bg-kompobrat-green"], input {
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+            h1 { font-size: clamp(1.875rem, 5vw, 2.25rem); }
+            h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
+        }
+        
+        @supports (padding: max(0px)) {
+            body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
@@ -61,11 +76,11 @@
     </nav>
 
     <!-- Product Hero -->
-    <section class="py-12 px-6 bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700">
+    <section class="py-8 sm:py-12 px-4 sm:px-6 bg-gradient-to-r from-kompobrat-green-600 to-kompobrat-green-700">
         <div class="max-w-7xl mx-auto">
-            <div class="inline-block bg-white text-kompobrat-green-600 px-4 py-2 rounded-full font-bold mb-4">⭐ EDYCJA LIMITOWANA</div>
-            <h1 class="text-5xl font-bold text-white mb-4">KOMPOBRAT Pro</h1>
-            <p class="text-xl text-green-50">Profesjonalny model z zaawansowanymi funkcjami - Pozostało zaledwie 67 jednostek!</p>
+            <div class="inline-block bg-white text-kompobrat-green-600 px-3 sm:px-4 py-2 rounded-full font-bold mb-3 sm:mb-4 text-sm sm:text-base">⭐ EDYCJA LIMITOWANA</div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">KOMPOBRAT Pro</h1>
+            <p class="text-lg sm:text-xl text-green-50">Profesjonalny model z zaawansowanymi funkcjami - Pozostało zaledwie 67 jednostek!</p>
         </div>
     </section>
 

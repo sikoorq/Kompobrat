@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#16a34a">
     <title>KOMPOBRAT - Ekskluzyjna technologia kompostowania domowego</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,6 +38,22 @@
         
         .smooth-transition {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            button, a[class*="bg-kompobrat-green"], input {
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+            h1 { font-size: clamp(1.875rem, 5vw, 2.25rem); }
+            h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
+        }
+        
+        @supports (padding: max(0px)) {
+            body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+            nav > div { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(1.5rem, env(safe-area-inset-right)); }
         }
     </style>
 </head>
@@ -73,74 +90,74 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+    <section class="pt-12 sm:pt-20 pb-16 sm:pb-24 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="space-y-6 sm:space-y-8">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     <span class="text-kompobrat-green-600">KOMPOBRAT:</span><br>
                     <span class="text-gray-900 dark:text-white">Twoja kuchnia, Twoja natura, Twój styl</span>
                 </h1>
-                <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                     Rewolucyjna technologia kompostowania domowego. Całkowicie <span class="font-semibold text-kompobrat-green-600">bezwonna</span>, elegancka w kolorze mięty, 
                     niezauważalna dla oka. Zmienia odpady bioodpadów w żyzny nawóz w zaledwie 24 godziny.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-8 py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 text-center">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
+                    <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 text-center min-h-12 flex items-center justify-center">
                         Zobacz nasze produkty
                     </a>
-                    <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-8 py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition">
+                    <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition min-h-12 flex items-center justify-center">
                         Obejrzyj film
                     </button>
                 </div>
             </div>
             
-            <div class="relative">
-                <img src="images/Gemini_Generated_Image_7egg4d7egg4d7egg.png" alt="KOMPOBRAT - Kompostownik w kuchni" class="w-full h-96 rounded-3xl object-cover shadow-lg smooth-transition">
+            <div class="relative mt-8 md:mt-0">
+                <img src="images/Gemini_Generated_Image_7egg4d7egg4d7egg.png" alt="KOMPOBRAT - Kompostownik w kuchni" class="w-full h-64 sm:h-80 md:h-96 rounded-2xl sm:rounded-3xl object-cover shadow-lg smooth-transition">
                 <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-kompobrat-copper opacity-20 rounded-full blur-2xl"></div>
             </div>
         </div>
     </section>
 
     <!-- Zalety Section -->
-    <section id="zalety" class="py-20 px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
+    <section id="zalety" class="py-12 sm:py-20 px-4 sm:px-6 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-50 smooth-transition">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Dlaczego KOMPOBRAT?</h2>
-                <p class="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Dlaczego KOMPOBRAT?</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
                     Połączenie nowoczesnej technologii z eleganckim designem. Wszystko na rzecz Twojego komfortu i ochrony środowiska.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 <!-- Card 1: Bezwonność -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
-                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-4xl">✨</span>
+                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <span class="text-3xl sm:text-4xl">✨</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Całkowita Bezwonność</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Całkowita Bezwonność</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                         Rewolucyjna filtracja powietrza z aktywnym węglem i technologią ozonowania. Żaden zapach w Twojej kuchni.
                     </p>
                 </div>
 
                 <!-- Card 2: Design -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
-                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-4xl">🎨</span>
+                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <span class="text-3xl sm:text-4xl">🎨</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Design Premium w Kolorze Mięty</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Design Premium w Kolorze Mięty</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                         Eleganckie pudełko w pastelowym kolorze mięty z naturalnymi elementami drewna i miedzi. Minimalistyczne i dyskretne - idealnie pasuje do każdej kuchni.
                     </p>
                 </div>
 
                 <!-- Card 3: Szybkość -->
-                <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
-                    <div class="w-16 h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-xl flex items-center justify-center mb-6">
-                        <span class="text-4xl">⚡</span>
+                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-5 sm:p-8 smooth-transition hover:shadow-xl transform hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 bg-kompobrat-green-50 dark:bg-gray-700 rounded-lg sm:rounded-xl flex items-center justify-center mb-4 sm:mb-6">
+                        <span class="text-3xl sm:text-4xl">⚡</span>
                     </div>
-                    <h3 class="text-2xl font-bold mb-3">Nawóz w 24h</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    <h3 class="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">Nawóz w 24h</h3>
+                    <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
                         Przyspieszony proces fermentacji dzięki własnemu mikrobiomowi. Gotowy do użytku nawóz każdego dnia.
                     </p>
                 </div>

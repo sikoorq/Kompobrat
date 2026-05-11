@@ -2,7 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#16a34a">
     <title>Produkty - KOMPOBRAT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,6 +39,22 @@
         .smooth-transition {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            button, a[class*="bg-kompobrat-green"], input {
+                min-height: 48px;
+                touch-action: manipulation;
+            }
+            .px-6 { padding-left: 1rem; padding-right: 1rem; }
+            h1 { font-size: clamp(1.875rem, 5vw, 2.25rem); }
+            h2 { font-size: clamp(1.5rem, 4vw, 1.875rem); }
+        }
+        
+        @supports (padding: max(0px)) {
+            body { padding-left: max(0px, env(safe-area-inset-left)); padding-right: max(0px, env(safe-area-inset-right)); }
+            nav > div { padding-left: max(1.5rem, env(safe-area-inset-left)); padding-right: max(1.5rem, env(safe-area-inset-right)); }
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-kompobrat-dark-900 text-gray-900 dark:text-gray-100 smooth-transition">
@@ -69,35 +86,35 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-16 pb-12 px-6">
+    <section class="pt-12 sm:pt-16 pb-8 sm:pb-12 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-5xl font-bold mb-4 text-kompobrat-green-600">Nasze Produkty</h1>
-            <p class="text-xl text-gray-600 dark:text-gray-300">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-kompobrat-green-600">Nasze Produkty</h1>
+            <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300">
                 Odkryj pełną gamę KOMPOBRAT – od kompaktowych rozwiązań dla małych przestrzeni po profesjonalne systemy dla zapalonych entuzjastów.
             </p>
         </div>
     </section>
 
     <!-- Products Grid -->
-    <section class="py-20 px-6">
+    <section class="py-12 sm:py-20 px-4 sm:px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 
                 <!-- Product 1: Mini -->
                 <a href="product-mini.html" class="block">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300">
-                    <img src="images/KOMPOBRATMINI.png" alt="KOMPOBRAT Mini" class="h-48 w-full object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">KOMPOBRAT Mini</h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                <div class="bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-xl smooth-transition transform hover:-translate-y-2 duration-300">
+                    <img src="images/KOMPOBRATMINI.png" alt="KOMPOBRAT Mini" class="h-40 sm:h-48 w-full object-cover">
+                    <div class="p-4 sm:p-6">
+                        <h3 class="text-lg sm:text-2xl font-bold mb-2">KOMPOBRAT Mini</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-xs sm:text-sm mb-4">
                             Idealny do małych apartamentów i pojedynczych osób.
                         </p>
-                        <div class="space-y-3 mb-6">
-                            <p class="text-sm"><strong>Pojemność:</strong> 0,5L</p>
-                            <p class="text-sm"><strong>Wymiary:</strong> 20×20×25cm</p>
-                            <p class="text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-lg">599 zł</span></p>
+                        <div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                            <p class="text-xs sm:text-sm"><strong>Pojemność:</strong> 0,5L</p>
+                            <p class="text-xs sm:text-sm"><strong>Wymiary:</strong> 20×20×25cm</p>
+                            <p class="text-xs sm:text-sm"><strong>Cena:</strong> <span class="text-kompobrat-green-600 font-bold text-base sm:text-lg">599 zł</span></p>
                         </div>
-                        <button onclick="addToCart('KOMPOBRAT Mini', 599, 'Idealny do małych apartamentów')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 rounded-lg font-semibold smooth-transition">
+                        <button onclick="addToCart('KOMPOBRAT Mini', 599, 'Idealny do małych apartamentów')" class="w-full bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white py-2 sm:py-3 rounded-lg font-semibold smooth-transition min-h-10 sm:min-h-12">
                             Dodaj do koszyka
                         </button>
                     </div>
