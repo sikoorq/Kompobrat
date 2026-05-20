@@ -107,7 +107,7 @@
                     <a href="products.html" class="bg-kompobrat-green-600 hover:bg-kompobrat-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300 text-center min-h-12 flex items-center justify-center">
                         Zobacz nasze produkty
                     </a>
-                    <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition min-h-12 flex items-center justify-center">
+                    <button onclick="openModal('video')" class="border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:border-kompobrat-green-600 dark:hover:border-kompobrat-green-500 smooth-transition min-h-12 flex items-center justify-center">
                         Obejrzyj film
                     </button>
                 </div>
@@ -526,9 +526,15 @@
         </div>
     </footer>
 
-    <!-- Version Badge -->
-    <div class="fixed bottom-6 right-6 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-4 py-2 rounded-full text-xs font-semibold opacity-50 hover:opacity-75 smooth-transition cursor-default">
-        Beta Tests
+    <!-- Video Modal -->
+    <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl">
+            <button onclick="closeModal('video')" class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
+            <video controls class="w-full rounded-lg shadow-2xl">
+                <source src="video/reklama.mp4" type="video/mp4">
+                Twoja przeglądarka nie obsługuje video.
+            </video>
+        </div>
     </div>
 
     <!-- Cookie Banner -->
